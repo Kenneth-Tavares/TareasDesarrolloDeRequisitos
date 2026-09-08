@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cafetería Campus</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Cafetería Campus</h1>
+
+        <nav>
+            <a href="#">Inicio</a>
+            <a href="#">Menú</a>
+            <a href="#">Pedido</a>
+        </nav>
+    </header>
+
+    <section class="principal">
+
+        <div class="texto-principal">
+            <h2>Tu café favorito, sin esperar tanto</h2>
+
+            <p>
+                Elige tu producto, indica la cantidad y realiza tu pedido.
+            </p>
+
+            <a href="#pedido" class="boton-inicio">
+                Hacer pedido
+            </a>
+        </div>
+
+        <div class="imagen-principal">
+            <img src="img/cafe.jpg" alt="Café">
+        </div>
+
+    </section>
+
+
+    <section class="productos">
+
+        <h2>Nuestros productos</h2>
+
+        <div class="tarjetas">
+
+            <div class="tarjeta">
+                <img src="img/cafe.jpg" alt="Café">
+                <h3>Café</h3>
+                <p>$35</p>
+            </div>
+
+            <div class="tarjeta">
+                <img src="img/te.jpg" alt="Té">
+                <h3>Té</h3>
+                <p>$25</p>
+            </div>
+
+            <div class="tarjeta">
+                <img src="img/pan.jpg" alt="Pan dulce">
+                <h3>Pan dulce</h3>
+                <p>$40</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section id="pedido" class="pedido">
+
+        <h2>Realiza tu pedido</h2>
+
+        <label>Nombre:</label>
+        <input type="text" id="nombre">
+
+        <label>Producto:</label>
+
+        <select id="producto" onchange="mostrarProducto()">
+            <option value="35">Café - $35</option>
+            <option value="25">Té - $25</option>
+            <option value="40">Pan dulce - $40</option>
+        </select>
+
+        <label>Cantidad:</label>
+        <input type="number" id="cantidad" min="1" value="1">
+
+        <button onclick="calcularTotal()">
+            Calcular total
+        </button>
+
+        <p id="total">Total: $0</p>
+
+        <button onclick="realizarPedido()">
+            Realizar pedido
+        </button>
+
+        <p id="mensaje"></p>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
