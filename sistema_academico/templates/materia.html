@@ -1,0 +1,6 @@
+{% extends "base.html" %}{% block c %}
+<p><a href="{{ url_for('profesor') }}">← Mis materias</a></p><h1>{{ m.nombre }}</h1>
+<form method="post" class="card"><input type="hidden" name="csrf_token" value="{{ csrf }}">
+<div class="tabla"><table><thead><tr><th>Alumno</th><th>Calificación (0–10)</th></tr></thead><tbody>
+{% for a in alumnos %}<tr><td>{{ a.nombre }}</td><td><input class="num" name="c_{{ a.id }}" inputmode="decimal" value="{{ a.calificacion if a.calificacion is not none else '' }}" aria-label="Calificación de {{ a.nombre }}"></td></tr>{% endfor %}
+</tbody></table></div><button>Guardar todo</button></form>{% endblock %}

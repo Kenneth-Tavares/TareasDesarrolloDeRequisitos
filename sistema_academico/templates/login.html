@@ -1,0 +1,6 @@
+{% extends "base.html" %}{% block t %}Ingresar{% endblock %}
+{% block c %}<section class="card estrecho"><h1>Iniciar sesión</h1>
+<form method="post"><input type="hidden" name="csrf_token" value="{{ csrf }}">
+<label>Usuario<input name="usuario" autocomplete="username" required autofocus></label>
+<label>Contraseña<input name="password" type="password" autocomplete="current-password" required></label>
+<button>Entrar</button></form></section>{% endblock %}

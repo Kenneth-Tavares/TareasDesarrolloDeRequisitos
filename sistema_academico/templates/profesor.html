@@ -1,0 +1,4 @@
+{% extends "base.html" %}{% block c %}
+<h1>Mis materias</h1><div class="rejilla">
+{% for m in materias %}<a class="card enlace" href="{{ url_for('materia', mid=m.id) }}"><h2>{{ m.nombre }}</h2><p>{{ m.alumnos }} alumno(s)</p><span>Registrar calificaciones →</span></a>
+{% else %}<p>No tiene materias asignadas.</p>{% endfor %}</div>{% endblock %}

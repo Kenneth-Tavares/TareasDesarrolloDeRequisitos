@@ -1,0 +1,9 @@
+{% extends "base.html" %}{% block c %}
+<h1>Mis calificaciones</h1>
+<section class="card"><p class="prom">Promedio actual: <strong>{{ promedio if promedio is not none else '—' }}</strong></p>
+<div class="tabla"><table><thead><tr><th>Materia</th><th>Profesor</th><th>Calificación</th><th>Estado</th></tr></thead><tbody>
+{% for f in filas %}<tr><td>{{ f.materia }}</td><td>{{ f.profesor }}</td>
+<td>{{ f.calificacion if f.calificacion is not none else '—' }}</td>
+<td>{% if f.calificacion is none %}<span class="b pend">Pendiente</span>
+{% elif f.calificacion >= aprob %}<span class="b ok">Aprobada</span>{% else %}<span class="b mal">Reprobada</span>{% endif %}</td></tr>
+{% else %}<tr><td colspan="4">No tiene materias inscritas.</td></tr>{% endfor %}</tbody></table></div></section>{% endblock %}

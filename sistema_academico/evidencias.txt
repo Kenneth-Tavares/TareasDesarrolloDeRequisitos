@@ -1,0 +1,19 @@
+Atributo | Prueba | Resultado
+Seguridad | Sin sesión, /alumno y /profesor redirigen a login | PASA
+Seguridad | POST sin token CSRF es rechazado (400) | PASA
+Seguridad | Cabeceras CSP / X-Frame-Options / nosniff presentes | PASA
+Seguridad | Contraseñas almacenadas con hash (no en texto plano) | PASA
+Seguridad | Alumno1 ve sus datos y NO los de Alumno2 | PASA
+Seguridad | Alumno no accede a área de profesores ni edita (403) | PASA
+Seguridad | Profesor no puede editar materia ajena (403) | PASA
+Seguridad | Profesor modifica calificación de su materia (flujo permitido) | PASA
+Seguridad | Calificación fuera de 0-10 es rechazada | PASA
+Seguridad | Bloqueo temporal tras 5 intentos fallidos (429) | PASA
+Usabilidad | Diseño adaptable a móvil y campos con etiqueta | PASA
+Usabilidad | Profesor captura todo el grupo en un envío ('Guardar todo') | PASA
+Usabilidad | Alumno ve promedio y estado Aprobada/Reprobada sin cálculos | PASA
+Usabilidad | Mensaje de error claro ante credenciales incorrectas | PASA
+Disponibilidad | Consulta de calificaciones: 0.9 ms promedio (50 solicitudes) | PASA
+Disponibilidad | Sin dependencias externas (CDN/fuentes): un solo servidor basta | PASA
+
+Total: 16/16 pruebas aprobadas
