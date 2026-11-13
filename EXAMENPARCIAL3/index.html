@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Almacén de refacciones</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<section id="login">
+ <div class="lbox">
+  <h1>Almacén de refacciones</h1>
+  <p style="color:var(--mu);margin:4px 0 8px">Mantenimiento de maquinaria industrial</p>
+  <label for="lu">Usuario</label><input id="lu" autocomplete="username">
+  <label for="lp">Contraseña</label><input id="lp" type="password" autocomplete="current-password">
+  <div class="err" id="lerr"></div>
+  <button class="btn" style="width:100%;margin-top:6px" onclick="login()">Entrar</button>
+  <div class="demo"><span style="font-size:13px;color:var(--mu);width:100%">Cuentas de prueba:</span>
+   <button class="btn sec sm" onclick="fill('admin','admin123')">Administrador</button>
+   <button class="btn sec sm" onclick="fill('gerente','gerente123')">Gerente</button>
+   <button class="btn sec sm" onclick="fill('tecnico','tecnico123')">Técnico</button></div>
+ </div>
+</section>
+<div id="app">
+ <nav id="side"></nav>
+ <main id="main"></main>
+</div>
+<dialog id="dlg"></dialog>
+<div id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
